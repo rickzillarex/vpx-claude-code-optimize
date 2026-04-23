@@ -1023,7 +1023,9 @@ Sub RollingTimer_Timer()
 
         ' stop the sound of deleted balls
         For b = ubBot + 1 to tnob
+			On Error Resume Next
 			If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
+			On Error Goto 0
                 rolling(b) = False
                 StopSound BallRollStr(b)
 				StopSound RampLoopStr(b)
@@ -1082,6 +1084,7 @@ Sub RollingTimer_Timer()
 
 ' "Static" Ball Shadows (use cached bx/by/bz and pre-computed constants)
 		If AmbientBallShadowOn = 0 Then
+			On Error Resume Next
 			If bz > 30 Then
 				BallShadowA(b).height = bz - BS_d4
 			Else
@@ -1090,6 +1093,7 @@ Sub RollingTimer_Timer()
 			BallShadowA(b).Y = by + BS_d5 + fovY
 			BallShadowA(b).X = bx
 			BallShadowA(b).visible = 1
+			On Error Goto 0
 		End If
 
         Next
@@ -1775,9 +1779,8 @@ End Sub
 '*****************
 ' Maths
 '*****************
-'Dim PI: PI = 4*Atn(1)
-Dim PIover180 : PIover180 = PI / 180
-Dim d180overPI : d180overPI = 180 / PI
+Dim PIover180
+Dim d180overPI
 
 Function dSin(degrees)
 	dsin = sin(degrees * PIover180)
@@ -2176,7 +2179,9 @@ End Class
 ' Note, cor.update must be called in a 10 ms timer. The example table uses the GameTimer for this purpose, but sometimes a dedicated timer call RDampen is used.
 '
 Sub RDampen_Timer
+	On Error Resume Next
 	Cor.Update
+	On Error Goto 0
 End Sub
 
 '******************************************************
@@ -3070,6 +3075,8 @@ Function max(a,b)
 end Function
 
 Dim PI: PI = 4*Atn(1)
+PIover180 = PI / 180
+d180overPI = 180 / PI
 
 Function Atn2(dy, dx)
 	If dx > 0 Then
