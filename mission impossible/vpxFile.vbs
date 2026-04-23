@@ -78,26 +78,26 @@ End If
 Dim PlayersPlayingGame
 Dim CurrentPlayer
 Dim Credits
-Dim BonusPoints(4)
-Dim BonusHeldPoints(4)
-Dim BonusMultiplier(4)
-Dim PlayfieldMultiplier(4)
+ReDim BonusPoints(4)
+ReDim BonusHeldPoints(4)
+ReDim BonusMultiplier(4)
+ReDim PlayfieldMultiplier(4)
 Dim PFxSeconds
 Dim bBonusHeld
-Dim BallsRemaining(4)
-Dim ExtraBallsAwards(4)
-Dim Score(4)
-Dim HighScore(4)
-Dim HighScoreName(4)
-Dim Jackpot(4)
-Dim SuperJackpot(4)
+ReDim BallsRemaining(4)
+ReDim ExtraBallsAwards(4)
+ReDim Score(4)
+ReDim HighScore(4)
+ReDim HighScoreName(4)
+ReDim Jackpot(4)
+ReDim SuperJackpot(4)
 Dim Tilt
 Dim TiltSensitivity
 Dim Tilted
 Dim TotalGamesPlayed
 Dim mBalls2Eject
-Dim SkillshotValue(4)
-Dim SuperSkillshotValue(4)
+ReDim SkillshotValue(4)
+ReDim SuperSkillshotValue(4)
 Dim bAutoPlunger
 Dim bInstantInfo
 Dim bAttractMode
@@ -106,7 +106,7 @@ Dim x
 ' Define Game Control Variables
 Dim LastSwitchHit
 Dim BallsOnPlayfield
-Dim BallsInLock(4)
+ReDim BallsInLock(4)
 Dim BallsInHole
 
 ' Define Game Flags
@@ -843,7 +843,7 @@ End Function
 Const tnob = 19   'total number of balls
 Const lob = 1     'number of locked balls
 Const maxvel = 40 'max ball velocity
-Const BS_d2 = BallSize / 2
+Dim BS_d2 : BS_d2 = BallSize / 2
 ReDim rolling(tnob)
 InitRolling
 
@@ -1789,7 +1789,7 @@ End Sub
 
 Dim hsbModeActive
 Dim hsEnteredName
-Dim hsEnteredDigits(3)
+ReDim hsEnteredDigits(3)
 Dim hsCurrentDigit
 Dim hsValidLetters
 Dim hsCurrentLetter
@@ -2017,16 +2017,16 @@ Dim deSpeed
 Dim deBlinkSlowRate
 Dim deBlinkFastRate
 
-Dim dLine(2)
-Dim deCount(2)
-Dim deCountEnd(2)
-Dim deBlinkCycle(2)
+ReDim dLine(2)
+ReDim deCount(2)
+ReDim deCountEnd(2)
+ReDim deBlinkCycle(2)
 
 Dim dqText(2, 64)
 Dim dqEffect(2, 64)
-Dim dqTimeOn(64)
-Dim dqbFlush(64)
-Dim dqSound(64)
+ReDim dqTimeOn(64)
+ReDim dqbFlush(64)
+ReDim dqSound(64)
 
 Dim FlexDMD
 Dim DMDScene
@@ -2861,21 +2861,21 @@ End Sub
 ' tables variables and Mode init
 Dim bRotateLights
 Dim Mode(4, 15) 'the first 4 is the current player, contains status of the Mode, 0 not started, 1 won, 2 started
-Dim Weapons(4)  ' collected weapons
+ReDim Weapons(4) ' collected weapons
 Dim LoopCount
-Dim LoopHits(4)
-Dim LoopValue(4)
+ReDim LoopHits(4)
+ReDim LoopValue(4)
 Dim SlingCount 'used for the db2s animation
 Dim ComboCount
-Dim ComboHits(4)
-Dim ComboValue(4)
+ReDim ComboHits(4)
+ReDim ComboValue(4)
 Dim Mystery(4, 4) 'inlane lights for each player
-Dim BumperHits(4)
-Dim BumperNeededHits(4)
+ReDim BumperHits(4)
+ReDim BumperNeededHits(4)
 Dim TargetHits(4, 7) '6 targets + the bumper -the blue lights
 Dim WeaponHits(4, 6) '6 lights, lanes and the magnet post
 Dim aWeaponSJactive
-Dim WeaponSJValue(4)
+ReDim WeaponSJValue(4)
 Dim bFlippersEnabled
 Dim bTommyStarted
 Dim TommyCount 'counts the seconds left
@@ -2884,17 +2884,17 @@ Dim bPoliceStarted
 Dim PoliceRampHits
 Dim PoliceTargetHits
 Dim PoliceCount 'counts the seconds, used for the police jackpot
-Dim TeensKilled(4)
-Dim TeensKilledValue(4)
-Dim CounselorsKilled(4)
-Dim CenterSpinnerHits(4)
-Dim LeftSpinnerHits(4)
-Dim RightSpinnerHits(4)
-Dim TargetJackpot(4)
+ReDim TeensKilled(4)
+ReDim TeensKilledValue(4)
+ReDim CounselorsKilled(4)
+ReDim CenterSpinnerHits(4)
+ReDim LeftSpinnerHits(4)
+ReDim RightSpinnerHits(4)
+ReDim TargetJackpot(4)
 Dim bJasonMBStarted
 Dim bFreddyMBStarted
 Dim bMichaelMBStarted
-Dim ArrowMultiPlier(8) 'used for the Jackpot multiplier and the color for the Jason MB arrow lights
+ReDim ArrowMultiPlier(8) 'used for the Jackpot multiplier and the color for the Jason MB arrow lights
 Dim FreddySJValue
 Dim MichaelSJValue
 'variables used only in the modes
