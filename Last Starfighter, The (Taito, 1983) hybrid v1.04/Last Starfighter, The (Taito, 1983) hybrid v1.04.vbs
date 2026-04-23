@@ -981,7 +981,7 @@ Sub InitRolling
         rolling(i) = False
     Next
 End Sub
-Dim BallRollStr(19)
+Dim BallRollStr
 BallRollStr = Array("fx_ballrolling0", "fx_ballrolling1", "fx_ballrolling2", "fx_ballrolling3", "fx_ballrolling4", "fx_ballrolling5", "fx_ballrolling6", "fx_ballrolling7", "fx_ballrolling8", "fx_ballrolling9", "fx_ballrolling10", "fx_ballrolling11", "fx_ballrolling12", "fx_ballrolling13", "fx_ballrolling14", "fx_ballrolling15", "fx_ballrolling16", "fx_ballrolling17", "fx_ballrolling18", "fx_ballrolling19")
 
 
